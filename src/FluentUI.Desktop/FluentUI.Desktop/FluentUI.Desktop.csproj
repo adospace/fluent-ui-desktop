@@ -1,0 +1,21 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net5.0-windows</TargetFramework>
+    <Nullable>enable</Nullable>
+    <UseWPF>true</UseWPF>
+    <PackageId>FluentUI.Desktop</PackageId>
+    <Version Condition=" '$(APPVEYOR_BUILD_VERSION)' == '' ">0.0.1-local</Version>
+    <Version Condition=" '$(APPVEYOR_BUILD_VERSION)' != '' ">$(APPVEYOR_BUILD_VERSION)</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <Authors>adospace</Authors>
+    <Company></Company>
+    <Description>WPF implementation of the Fluent UI Desktop design language (https://developer.microsoft.com/en-us/fluent)</Description>
+    <PackageTags>fluentui office fluent winui wpf design UI library</PackageTags>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <PackageProjectUrl>https://github.com/adospace/fluent-ui-desktop</PackageProjectUrl>
+  </PropertyGroup>
+
+
+</Project>
