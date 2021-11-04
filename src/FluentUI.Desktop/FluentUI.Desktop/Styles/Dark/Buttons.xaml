@@ -24,7 +24,6 @@
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
-        <Setter Property="Padding" Value="16,5"/>
         <Setter Property="TextElement.FontSize" Value="12"/>
         <Setter Property="Border.CornerRadius" Value="4"/>
         <Setter Property="MinHeight" Value="32"/>

@@ -5,16 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FluentUI.Desktop.DemoApp"
         mc:Ignorable="d"
-        Background="{StaticResource DefaultBackground}"
+        Background="{DynamicResource DefaultBackground}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
 
+        <Menu>
+            <MenuItem Header="File">
+                <MenuItem Header="Dark Theme" Click="OnSetDarkTheme" />
+                <MenuItem Header="Light Theme" Click="OnSetLightTheme" />
+            </MenuItem>
+        </Menu>
+
         <TreeView
+            Grid.Row="1"
             SelectedItemChanged="TreeView_SelectedItemChanged"
             >
             <TreeViewItem Header="Core Controls" IsExpanded="True">
@@ -24,6 +36,7 @@
 
         <ContentControl
             x:Name="pageContainer"
+            Grid.Row="1"
             Grid.Column="1">
             
         </ContentControl>
