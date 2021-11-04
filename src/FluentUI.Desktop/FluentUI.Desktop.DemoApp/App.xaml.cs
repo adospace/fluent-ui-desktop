@@ -15,9 +15,13 @@ namespace FluentUI.Desktop.DemoApp
     {
         public App()
         {
+            //Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
+            //{
+            //    Source = new Uri("pack://application:,,,/FluentUI.Desktop;component/Styles/Light/Controls.xaml", UriKind.Absolute)
+            //});
             Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
             {
-                Source = new Uri("pack://application:,,,/FluentUI.Desktop;component/Styles/Light/Controls.xaml", UriKind.Absolute)
+                Source = new Uri("pack://application:,,,/FluentUI.Desktop;component/Styles/Dark/Controls.xaml", UriKind.Absolute)
             });
         }
     }

@@ -2,6 +2,8 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
 
+    <SolidColorBrush x:Key="DefaultBackground" Color="#FAFAFA" po:Freeze="True"/>
+
     <SolidColorBrush x:Key="LightFillColorTextPrimary" Color="#E4000000" po:Freeze="True"/>
     <SolidColorBrush x:Key="LightFillColorTextSecondary" Color="#9B000000" po:Freeze="True"/>
     <SolidColorBrush x:Key="LightFillColorTextTertiary" Color="#72000000" po:Freeze="True"/>
@@ -54,23 +56,23 @@
     <SolidColorBrush x:Key="LightFillColorControlOnImageSecondary" Color="#FFF3F3F3" po:Freeze="True"/>
     <SolidColorBrush x:Key="LightFillColorControlOnImageTertiary" Color="#FFEBEBEB" po:Freeze="True"/>
     <SolidColorBrush x:Key="LightFillColorControlOnImageDisabled" Color="#00FFFFFF" po:Freeze="True"/>
-    <LinearGradientBrush  x:Key="LightElevationControlBorderr">
+    <LinearGradientBrush  x:Key="LightElevationControlBorder" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#0F000000" Offset="0.90576171875"/>
         <GradientStop Color="#29000000" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush  x:Key="LightElevationCircleBorderr">
+    <LinearGradientBrush  x:Key="LightElevationCircleBorder" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#0F000000" Offset="0.5002084970474243"/>
         <GradientStop Color="#29000000" Offset="0.9545454382896423"/>
     </LinearGradientBrush>
-    <LinearGradientBrush  x:Key="LightElevationTextControlBorderr">
+    <LinearGradientBrush  x:Key="LightElevationTextControlBorder" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#0F000000" Offset="0.9998779296875"/>
         <GradientStop Color="#72000000" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush  x:Key="LightElevationTextControlBorderFocusedr">
+    <LinearGradientBrush  x:Key="LightElevationTextControlBorderFocused" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#0F000000" Offset="0.96875"/>
         <GradientStop Color="#FF0067C0" Offset="0.9688720703125"/>
     </LinearGradientBrush>
-    <LinearGradientBrush  x:Key="LightElevationAccentControlBorderr">
+    <LinearGradientBrush  x:Key="LightElevationAccentControlBorder" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#14FFFFFF" Offset="0.90673828125"/>
         <GradientStop Color="#66000000" Offset="1"/>
     </LinearGradientBrush>

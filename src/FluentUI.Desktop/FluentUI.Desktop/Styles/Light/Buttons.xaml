@@ -1,11 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="/FluentUI.Desktop;component/Styles/Light/Brushes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+    
     <Style x:Key="FluentUIDesktopFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
-                    <Rectangle Margin="-1" RadiusX="3" RadiusY="3" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{StaticResource Light.Fill.Color.Text.Primary}"/>
+                    <Rectangle Margin="-2" RadiusX="3" RadiusY="3" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{StaticResource LightFillColorTextPrimary}"/>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
@@ -13,17 +17,16 @@
 
     <Style x:Key="FluentUIDesktopButtonStyle" TargetType="{x:Type Button}">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopFocusVisual}"/>
-        <Setter Property="Background" Value="{StaticResource Light.Fill.Color.Control.Default}"/>
-        <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray110}"/>
-        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
+        <Setter Property="Background" Value="{StaticResource LightFillColorControlDefault}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource LightElevationControlBorder}"/>
+        <Setter Property="Foreground" Value="{StaticResource LightFillColorTextPrimary}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="HorizontalContentAlignment" Value="Center"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Setter Property="Padding" Value="16,5"/>
-        <Setter Property="TextElement.FontWeight" Value="Medium"/>
-        <Setter Property="TextElement.FontSize" Value="14"/>
-        <Setter Property="Border.CornerRadius" Value="2"/>
-        <Setter Property="Height" Value="32"/>
+        <Setter Property="TextElement.FontSize" Value="12"/>
+        <Setter Property="Border.CornerRadius" Value="4"/>
+        <Setter Property="MinHeight" Value="32"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type Button}">
@@ -32,15 +35,17 @@
                     </Border>
                     <ControlTemplate.Triggers>
                         <Trigger Property="IsMouseOver" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray20}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource LightFillColorControlSecondary}"/>
                         </Trigger>
                         <Trigger Property="IsPressed" Value="true">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray30}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource LightFillColorControlTertiary}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource LightStrokeColorControlStrokeDefault}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource LightFillColorTextSecondary}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Neutral.Gray90}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource LightFillColorControlDisabled}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource LightStrokeColorControlStrokeDefault}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource LightFillColorTextDisabled}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>

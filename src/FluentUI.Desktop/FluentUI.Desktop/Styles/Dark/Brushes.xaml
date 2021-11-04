@@ -1,7 +1,9 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
-    
+
+    <SolidColorBrush x:Key="DefaultBackground" Color="#1C1C1C" po:Freeze="True"/>
+
     <SolidColorBrush x:Key="DarkFillColorTextPrimary" Color="#FFFFFFFF" po:Freeze="True"/>
     <SolidColorBrush x:Key="DarkFillColorTextSecondary" Color="#C8FFFFFF" po:Freeze="True"/>
     <SolidColorBrush x:Key="DarkFillColorTextTertiary" Color="#8BFFFFFF" po:Freeze="True"/>
@@ -54,24 +56,24 @@
     <SolidColorBrush x:Key="DarkFillColorControlOnImageSecondary" Color="#FF1A1A1A" po:Freeze="True"/>
     <SolidColorBrush x:Key="DarkFillColorControlOnImageTertiary" Color="#FF131313" po:Freeze="True"/>
     <SolidColorBrush x:Key="DarkFillColorControlOnImageDisabled" Color="#001E1E1E" po:Freeze="True"/>
-    <LinearGradientBrush  x:Key="DarkElevationControlBorderr">
+    <LinearGradientBrush  x:Key="DarkElevationControlBorder" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#18FFFFFF" Offset="0"/>
         <GradientStop Color="#12FFFFFF" Offset="0.095703125"/>
     </LinearGradientBrush>
-    <LinearGradientBrush  x:Key="DarkElevationCircleBorderr">
+    <LinearGradientBrush  x:Key="DarkElevationCircleBorder" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#18FFFFFF" Offset="0"/>
         <GradientStop Color="#12FFFFFF" Offset="0.5"/>
     </LinearGradientBrush>
-    <LinearGradientBrush  x:Key="DarkElevationTextControlBorderr">
+    <LinearGradientBrush  x:Key="DarkElevationTextControlBorder" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#14FFFFFF" Offset="0.9997667670249939"/>
         <GradientStop Color="#8BFFFFFF" Offset="1"/>
         <GradientStop Color="#8BFFFFFF" Offset="1"/>
     </LinearGradientBrush>
-    <LinearGradientBrush  x:Key="DarkElevationTextControlBorderFocusedr">
+    <LinearGradientBrush  x:Key="DarkElevationTextControlBorderFocused" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#14FFFFFF" Offset="0.9688720703125"/>
         <GradientStop Color="#FF4CC2FF" Offset="0.968994140625"/>
     </LinearGradientBrush>
-    <LinearGradientBrush  x:Key="DarkElevationAccentControlBorderr">
+    <LinearGradientBrush  x:Key="DarkElevationAccentControlBorder" StartPoint="0,0" EndPoint="0,1">
         <GradientStop Color="#14FFFFFF" Offset="0.90673828125"/>
         <GradientStop Color="#24000000" Offset="1"/>
     </LinearGradientBrush>
