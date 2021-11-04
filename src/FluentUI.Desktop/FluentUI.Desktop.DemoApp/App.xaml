@@ -4,6 +4,12 @@
              xmlns:local="clr-namespace:FluentUI.Desktop.DemoApp"
              StartupUri="MainWindow.xaml">
     <Application.Resources>
-         
+        <!--<ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="/FluentUI.Desktop;component/Styles/Light/Brushes.xaml"/>
+                <ResourceDictionary Source="/FluentUI.Desktop;component/Styles/Light/Buttons.xaml"/>
+                <ResourceDictionary Source="/FluentUI.Desktop;component/Styles/Light/Controls.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+        </ResourceDictionary>-->
     </Application.Resources>
 </Application>
