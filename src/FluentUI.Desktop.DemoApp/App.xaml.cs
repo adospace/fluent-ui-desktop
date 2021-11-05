@@ -8,6 +8,13 @@ using System.Windows;
 
 namespace FluentUI.Desktop.DemoApp
 {
+    public enum Theme
+    { 
+        Light,
+
+        Dark
+    }
+
     /// <summary>
     /// Interaction logic for App.xaml
     /// </summary>
@@ -15,14 +22,20 @@ namespace FluentUI.Desktop.DemoApp
     {
         public App()
         {
-            Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
-            {
-                Source = new Uri("pack://application:,,,/FluentUI.Desktop;component/Styles/Light/Controls.xaml", UriKind.Absolute)
-            });
-            //Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
-            //{
-            //    Source = new Uri("pack://application:,,,/FluentUI.Desktop;component/Styles/Dark/Controls.xaml", UriKind.Absolute)
-            //});
+            SetTheme(Theme.Light);
         }
+
+        public static void SetTheme(Theme theme)
+        { 
+            Application.Current.Resources.MergedDictionaries.Clear();
+            AddResourceMergedDictionary($"Brushes.{theme}");
+            AddResourceMergedDictionary("Controls");            
+        }
+
+        private static void AddResourceMergedDictionary(string name)
+            => Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
+            {
+                Source = new Uri($"pack://application:,,,/FluentUI.Desktop;component/Styles/{name}.xaml", UriKind.Absolute)
+            });
     }
 }

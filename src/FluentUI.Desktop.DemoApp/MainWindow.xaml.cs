@@ -34,22 +34,14 @@ namespace FluentUI.Desktop.DemoApp
             }
         }
 
-        private void OnSetDarkTheme(object sender, RoutedEventArgs e)
-        {
-            Application.Current.Resources.MergedDictionaries.Clear();
-            Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
-            {
-                Source = new Uri("pack://application:,,,/FluentUI.Desktop;component/Styles/Dark/Controls.xaml", UriKind.Absolute)
-            });
-        }
-
         private void OnSetLightTheme(object sender, RoutedEventArgs e)
         {
-            Application.Current.Resources.MergedDictionaries.Clear();
-            Application.Current.Resources.MergedDictionaries.Add(new ResourceDictionary()
-            {
-                Source = new Uri("pack://application:,,,/FluentUI.Desktop;component/Styles/Light/Controls.xaml", UriKind.Absolute)
-            });
+            App.SetTheme(Theme.Light);
+        }
+
+        private void OnSetDarkTheme(object sender, RoutedEventArgs e)
+        {
+            App.SetTheme(Theme.Dark);
         }
     }
 }

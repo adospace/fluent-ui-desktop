@@ -1,0 +1,118 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:po="http://schemas.microsoft.com/winfx/2006/xaml/presentation/options">
+
+    <SolidColorBrush x:Key="DefaultBackground" Color="#FAFAFA" po:Freeze="True"/>
+
+    <SolidColorBrush x:Key="FillColorTextPrimary" Color="#E4000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorTextSecondary" Color="#9B000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorTextTertiary" Color="#72000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorTextDisabled" Color="#5C000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentTextPrimary" Color="#FF003E92" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentTextSecondary" Color="#FF001A68" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentTextTertiary" Color="#FF005FB8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentTextDisabled" Color="#5C000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorTextOnAccentPrimary" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorTextOnAccentSecondary" Color="#B2FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorTextOnAccentDisabled" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorTextOnAccentSelectedText" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlTransparent" Color="#00FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlDefault" Color="#B2FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlSecondary" Color="#80F9F9F9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlTertiary" Color="#4DF9F9F9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlInputActive" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlDisabled" Color="#4DF9F9F9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlStrongDefault" Color="#72000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlStrongDisabled" Color="#51000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSubtleTransparent" Color="#00FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSubtleSecondary" Color="#0A000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSubtleTertiary" Color="#06000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSubtleDisabled" Color="#00000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlSolidDefault" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlAltTransparent" Color="#00FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlAltSecondary" Color="#06000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlAltTertiary" Color="#0F000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlAltQuarternary" Color="#18000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlAltDisabled" Color="#00FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentDefault" Color="#FF005FB8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentSecondary" Color="#E5005FB8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentTertiary" Color="#CC005FB8" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentDisabled" Color="#37000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorAccentSelectedTextBackground" Color="#FF0078D4" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemCritical" Color="#FFC42B1C" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemSuccess" Color="#FF0F7B0F" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemAttention" Color="#FF005FB7" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemCaution" Color="#FF9D5D00" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemAttentionBackground" Color="#80F6F6F6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemSuccessBackground" Color="#FFDFF6DD" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemCautionBackground" Color="#FFFFF4CE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemCriticalBackground" Color="#FFFDE7E9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemNeutral" Color="#72000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemNeutralBackground" Color="#06000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemSolidNeutral" Color="#FF8A8A8A" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemSolidAttentionBackground" Color="#FFF7F7F7" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorSystemSolidNeutralBackground" Color="#FFF3F3F3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlOnImageDefault" Color="#C9FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlOnImageSecondary" Color="#FFF3F3F3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlOnImageTertiary" Color="#FFEBEBEB" po:Freeze="True"/>
+    <SolidColorBrush x:Key="FillColorControlOnImageDisabled" Color="#00FFFFFF" po:Freeze="True"/>
+    <LinearGradientBrush  x:Key="ElevationControlBorder" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#0F000000" Offset="0.90576171875"/>
+        <GradientStop Color="#29000000" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush  x:Key="ElevationCircleBorder" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#0F000000" Offset="0.5002084970474243"/>
+        <GradientStop Color="#29000000" Offset="0.9545454382896423"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush  x:Key="ElevationTextControlBorder" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#0F000000" Offset="0.9998779296875"/>
+        <GradientStop Color="#72000000" Offset="1"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush  x:Key="ElevationTextControlBorderFocused" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#0F000000" Offset="0.96875"/>
+        <GradientStop Color="#FF0067C0" Offset="0.9688720703125"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush  x:Key="ElevationAccentControlBorder" StartPoint="0,0" EndPoint="0,1">
+        <GradientStop Color="#14FFFFFF" Offset="0.90673828125"/>
+        <GradientStop Color="#66000000" Offset="1"/>
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="StrokeColorControlStrokeDefault" Color="#0F000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorControlStrokeSecondary" Color="#29000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorControlStrokeOnAccentDefault" Color="#14FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorControlStrokeOnAccentSecondary" Color="#66000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorControlStrokeOnAccentTertiary" Color="#37000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorControlStrokeOnAccentDisabled" Color="#0F000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorControlStrokeForStrongFillWhenOnImage" Color="#59FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorControlStrongStrokeDefault" Color="#72000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorControlStrongStrokeDisabled" Color="#37000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorCardStrokeDefault" Color="#0F000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorCardStrokeDefaultSolid" Color="#FFEBEBEB" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorDividerStrokeDefault" Color="#14000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorSurfaceStrokeDefault" Color="#66757575" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorSurfaceStrokeFlyout" Color="#0F000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorFocusStrokeOuter" Color="#E4000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="StrokeColorFocusStrokeInner" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorCardBackgroundDefault" Color="#B2FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorCardBackgroundSecondary" Color="#80F6F6F6" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorCardBackgroundTertiary" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorSmokeDefault" Color="#4D000000" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorLayerDefault" Color="#80FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorLayerAlt" Color="#FFFFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorLayerOnAcrylicDefault" Color="#40FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorLayerOnAccentAcrylicDefault" Color="#40FFFFFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorAcrylicBackgroundDefaultLuminosity" Color="#D9FCFCFC" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorAcrylicBackgroundDefaultColor" Color="#00FCFCFC" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorAcrylicBackgroundBaseLuminosity" Color="#E5F3F3F3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorAcrylicBackgroundBaseColor" Color="#00F3F3F3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorAccentAcrylicBackgroundBaseLuminosity" Color="#E599EBFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorAccentAcrylicBackgroundBaseColor" Color="#CC99EBFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorAccentAcrylicBackgroundDefaultLuminosity" Color="#E599EBFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorAccentAcrylicBackgroundDefaultColor" Color="#CC99EBFF" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorMicaBackgroundBaseLuminosity" Color="#FFF3F3F3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorMicaBackgroundBaseColor" Color="#80F3F3F3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorSolidBackgroundBase" Color="#FFF3F3F3" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorSolidBackgroundSecondary" Color="#FFEEEEEE" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorSolidBackgroundTertiary" Color="#FFF9F9F9" po:Freeze="True"/>
+    <SolidColorBrush x:Key="BackgroundFillColorSolidBackgroundQuarternary" Color="#FFFFFFFF" po:Freeze="True"/>
+
+</ResourceDictionary>

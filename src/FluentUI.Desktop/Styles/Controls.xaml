@@ -2,8 +2,7 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <ResourceDictionary.MergedDictionaries>
-        <ResourceDictionary Source="/FluentUI.Desktop;component/Styles/Dark/Brushes.xaml"/>
-        <ResourceDictionary Source="/FluentUI.Desktop;component/Styles/Dark/Buttons.xaml"/>
+        <ResourceDictionary Source="Buttons.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
