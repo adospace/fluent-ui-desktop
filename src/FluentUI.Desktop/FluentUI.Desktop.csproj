@@ -18,6 +18,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Fonts\Segoe Fluent Icons.ttf" />
+  </ItemGroup>
+
+  <ItemGroup>
     <Page Update="Styles\Brushes.Light.xaml">
       <XamlRuntime>$(DefaultXamlRuntime)</XamlRuntime>
       <SubType>Designer</SubType>
@@ -36,5 +40,8 @@
     </Page>
   </ItemGroup>
 
+  <ItemGroup>
+    <Resource Include="Fonts\Segoe Fluent Icons.ttf" />
+  </ItemGroup>
 
 </Project>

@@ -1,0 +1,104 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:fluentui.desktop="clr-namespace:FluentUI.Desktop"
+                    >
+
+    <Style x:Key="FluentUIDesktopWindowStyle" TargetType="Window">
+        <Setter Property="Foreground" Value="{DynamicResource FillColorTextPrimary}"/>
+        <Setter Property="Background" Value="{DynamicResource DefaultBackground}"/>
+        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="WindowChrome.WindowChrome">
+            <Setter.Value>
+                <WindowChrome 
+                    CaptionHeight="32" 
+                    UseAeroCaptionButtons="False"
+                    />
+            </Setter.Value>
+        </Setter>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="Window">
+                    <Border Background="{TemplateBinding Background}">
+                        <DockPanel>
+                            <DockPanel Height="32"
+                                       DockPanel.Dock="Top"
+                                       Background="{StaticResource BackgroundFillColorSolidBackgroundBase}">
+                                <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"  
+                                    DockPanel.Dock="Left"
+                                    Width="16"  
+                                    WindowChrome.IsHitTestVisibleInChrome="True"/>
+                                <fluentui.desktop:WindowChromeButton 
+                                    x:Name="closeButton" 
+                                    DockPanel.Dock="Right"
+                                    WindowChrome.IsHitTestVisibleInChrome="True"
+                                    Background="Transparent"
+                                    Mode="Close"
+                                    Width="46"
+                                    BorderThickness="0">
+                                    <fluentui.desktop:FluentIcon Icon="ChromeClose"/>
+                                </fluentui.desktop:WindowChromeButton>
+                                <fluentui.desktop:WindowChromeButton  
+                                    x:Name="restoreButton"
+                                    DockPanel.Dock="Right"
+                                    WindowChrome.IsHitTestVisibleInChrome="True"
+                                    Background="Transparent"
+                                    Mode="Restore"
+                                    Width="46"
+                                    BorderThickness="0">
+                                    <fluentui.desktop:FluentIcon Icon="ChromeRestore"/>
+                                </fluentui.desktop:WindowChromeButton>
+                                <fluentui.desktop:WindowChromeButton 
+                                    x:Name="maximixeButton" 
+                                    DockPanel.Dock="Right"
+                                    WindowChrome.IsHitTestVisibleInChrome="True"
+                                    Background="Transparent"
+                                    Mode="Maximize"
+                                    Width="46"
+                                    BorderThickness="0">
+                                    <fluentui.desktop:FluentIcon Icon="ChromeMaximize"/>
+                                </fluentui.desktop:WindowChromeButton>
+                                <fluentui.desktop:WindowChromeButton 
+                                    x:Name="minimizeButton" 
+                                    DockPanel.Dock="Right"
+                                    WindowChrome.IsHitTestVisibleInChrome="True"
+                                    Background="Transparent"
+                                    Mode="Minimize"
+                                    Width="46"
+                                    BorderThickness="0">
+                                    <fluentui.desktop:FluentIcon Icon="ChromeMinimize"/>
+                                </fluentui.desktop:WindowChromeButton>
+                                <TextBlock 
+                                    Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"   
+                                    VerticalAlignment="Center"
+                                    HorizontalAlignment="Left"
+                                    Margin="4"
+                                    />
+                            </DockPanel>
+                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="WindowState" Value="Maximized">
+                            <Setter Property="Visibility" TargetName="maximixeButton" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="WindowState" Value="Normal">
+                            <Setter Property="Visibility" TargetName="restoreButton" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="NoResize">
+                            <Setter Property="Visibility" TargetName="maximixeButton" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="restoreButton" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="minimizeButton" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="ResizeMode" Value="CanMinimize">
+                            <Setter Property="Visibility" TargetName="maximixeButton" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="restoreButton" Value="Collapsed"/>
+                            <Setter Property="Visibility" TargetName="minimizeButton" Value="Visible"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+
+</ResourceDictionary>

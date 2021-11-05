@@ -1,11 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fluentui.desktop="clr-namespace:FluentUI.Desktop">
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Buttons.xaml"/>
+        <ResourceDictionary Source="Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
+    <Style TargetType="fluentui.desktop:WindowChromeButton" BasedOn="{StaticResource FluentUIDesktopButtonStyle}"/>
     <Style TargetType="Button" BasedOn="{StaticResource FluentUIDesktopButtonStyle}"/>
+    <Style TargetType="Window" BasedOn="{StaticResource FluentUIDesktopWindowStyle}"/>
 
 </ResourceDictionary>

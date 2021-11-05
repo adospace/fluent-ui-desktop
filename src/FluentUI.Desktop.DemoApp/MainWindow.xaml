@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:FluentUI.Desktop.DemoApp"
         mc:Ignorable="d"
-        Background="{DynamicResource DefaultBackground}"
+        Style="{DynamicResource FluentUIDesktopWindowStyle}"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
         <Grid.RowDefinitions>
