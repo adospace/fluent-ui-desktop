@@ -11,72 +11,60 @@
             <Setter.Value>
                 <WindowChrome 
                     CaptionHeight="32" 
-                    UseAeroCaptionButtons="False"
+                    UseAeroCaptionButtons="True"
                     />
             </Setter.Value>
         </Setter>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="Window">
-                    <Border Background="{TemplateBinding Background}">
-                        <DockPanel>
-                            <DockPanel Height="32"
-                                       DockPanel.Dock="Top"
-                                       Background="{StaticResource BackgroundFillColorSolidBackgroundBase}">
-                                <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"  
-                                    DockPanel.Dock="Left"
-                                    Width="16"  
-                                    WindowChrome.IsHitTestVisibleInChrome="True"/>
-                                <fluentui.desktop:WindowChromeButton 
-                                    x:Name="closeButton" 
-                                    DockPanel.Dock="Right"
-                                    WindowChrome.IsHitTestVisibleInChrome="True"
-                                    Background="Transparent"
-                                    Mode="Close"
-                                    Width="46"
-                                    BorderThickness="0">
-                                    <fluentui.desktop:FluentIcon Icon="ChromeClose"/>
-                                </fluentui.desktop:WindowChromeButton>
-                                <fluentui.desktop:WindowChromeButton  
-                                    x:Name="restoreButton"
-                                    DockPanel.Dock="Right"
-                                    WindowChrome.IsHitTestVisibleInChrome="True"
-                                    Background="Transparent"
-                                    Mode="Restore"
-                                    Width="46"
-                                    BorderThickness="0">
-                                    <fluentui.desktop:FluentIcon Icon="ChromeRestore"/>
-                                </fluentui.desktop:WindowChromeButton>
-                                <fluentui.desktop:WindowChromeButton 
-                                    x:Name="maximixeButton" 
-                                    DockPanel.Dock="Right"
-                                    WindowChrome.IsHitTestVisibleInChrome="True"
-                                    Background="Transparent"
-                                    Mode="Maximize"
-                                    Width="46"
-                                    BorderThickness="0">
-                                    <fluentui.desktop:FluentIcon Icon="ChromeMaximize"/>
-                                </fluentui.desktop:WindowChromeButton>
-                                <fluentui.desktop:WindowChromeButton 
-                                    x:Name="minimizeButton" 
-                                    DockPanel.Dock="Right"
-                                    WindowChrome.IsHitTestVisibleInChrome="True"
-                                    Background="Transparent"
-                                    Mode="Minimize"
-                                    Width="46"
-                                    BorderThickness="0">
-                                    <fluentui.desktop:FluentIcon Icon="ChromeMinimize"/>
-                                </fluentui.desktop:WindowChromeButton>
-                                <TextBlock 
-                                    Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"   
-                                    VerticalAlignment="Center"
-                                    HorizontalAlignment="Left"
-                                    Margin="4"
-                                    />
-                            </DockPanel>
-                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                    <DockPanel>
+                        <DockPanel Height="32"
+                                   DockPanel.Dock="Top"
+                                   Background="{StaticResource BackgroundFillColorSolidBackgroundBase}" >
+                            <Image Source="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Icon}"  
+                                DockPanel.Dock="Left"
+                                Width="16"  
+                                WindowChrome.IsHitTestVisibleInChrome="False"/>
+                            <Border 
+                                x:Name="closeButton" 
+                                DockPanel.Dock="Right"
+                                Width="46"
+                                BorderThickness="0">
+                                <fluentui.desktop:FluentIcon Icon="ChromeClose" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <Border  
+                                x:Name="restoreButton"
+                                DockPanel.Dock="Right"
+                                Width="46"
+                                BorderThickness="0">
+                                <fluentui.desktop:FluentIcon Icon="ChromeRestore" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <Border 
+                                x:Name="maximixeButton" 
+                                DockPanel.Dock="Right"
+                                Width="46"
+                                BorderThickness="0">
+                                <fluentui.desktop:FluentIcon Icon="ChromeMaximize" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <Border 
+                                x:Name="minimizeButton" 
+                                DockPanel.Dock="Right"
+                                Width="46"
+                                BorderThickness="0">
+                                <fluentui.desktop:FluentIcon Icon="ChromeMinimize" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                            </Border>
+                            <TextBlock 
+                                Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"   
+                                VerticalAlignment="Center"
+                                HorizontalAlignment="Left"
+                                Margin="4"
+                                />
                         </DockPanel>
-                    </Border>
+                        <Border Background="{TemplateBinding Background}">
+                            <ContentPresenter Content="{TemplateBinding Content}"/>
+                        </Border>
+                    </DockPanel>
                     <ControlTemplate.Triggers>
                         <Trigger Property="WindowState" Value="Maximized">
                             <Setter Property="Visibility" TargetName="maximixeButton" Value="Collapsed"/>

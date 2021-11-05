@@ -1,6 +1,7 @@
 using System;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Input;
 
 namespace FluentUI.Desktop
 {
@@ -31,6 +32,11 @@ namespace FluentUI.Desktop
                 }
             }
             base.OnClick();
+        }
+
+        protected override void OnPreviewMouseMove(MouseEventArgs e)
+        {
+            base.OnPreviewMouseMove(e);
         }
     }
 
