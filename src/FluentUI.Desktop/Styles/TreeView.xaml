@@ -1,0 +1,190 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fluentui.desktop="clr-namespace:FluentUI.Desktop"
+                    xmlns:fluentui.desktop.converters="clr-namespace:FluentUI.Desktop.Converters"
+                    >
+
+    <fluentui.desktop.converters:GetNegativeMarginForTreeViewItem x:Key="GetNegativeMarginForTreeViewItem"/>
+    <fluentui.desktop.converters:GetPositiveMarginForTreeViewItem x:Key="GetPositiveMarginForTreeViewItem"/>
+
+    <Style x:Key="FluentUIDesktopTreeViewItemFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <PathGeometry x:Key="FluentUIDesktopTreeArrow" Figures="M0,0 L0,6 L6,0 z"/>
+
+    <Style x:Key="FluentUIDesktopExpandCollapseToggleStyle" TargetType="{x:Type ToggleButton}">
+        <Setter Property="Focusable" Value="False"/>
+        <Setter Property="Width" Value="26"/>
+        <Setter Property="Height" Value="25"/>
+        <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border
+                        Background="Transparent">
+                        <fluentui.desktop:FluentIcon x:Name="expandIcon" 
+                                                     Icon="ChevronRight" 
+                                                     RenderTransformOrigin="0.5,0.5" 
+                                                     VerticalAlignment="Center" 
+                                                     HorizontalAlignment="Center"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="RenderTransform" TargetName="expandIcon">
+                                <Setter.Value>
+                                    <RotateTransform Angle="90"/>
+                                </Setter.Value>
+                            </Setter>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FluentUIDesktopTreeViewItemStyle" TargetType="TreeViewItem">
+        <Setter Property="Background" Value="Transparent"/>
+        <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="6"/>
+        <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="Background" Value="{StaticResource FillColorSubtleTransparent}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopTreeViewItemFocusVisual}"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="TreeViewItem">
+                    <Grid Background="{TemplateBinding Background}">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition Width="Auto"/>
+                            <ColumnDefinition MinWidth="26" Width="Auto"/>
+                            <ColumnDefinition Width="*"/>
+                        </Grid.ColumnDefinitions>
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition/>
+                        </Grid.RowDefinitions>
+
+                        <Border x:Name="selectionBd" 
+                                Grid.ColumnSpan="4"  
+                                CornerRadius="4"
+                                Background="{TemplateBinding Background}">
+                            <Line
+                                x:Name="selectionLine"
+                                HorizontalAlignment="Left"
+                                Visibility="Hidden"
+                                Stroke="{StaticResource FillColorAccentSecondary}"
+                                StrokeThickness="3"
+                                Width="3"
+                                Height="16"
+                                X1="1.5"
+                                X2="1.5"
+                                Y1="1.5"
+                                Y2="14.5"
+                                StrokeStartLineCap="Round"
+                                StrokeEndLineCap="Round">
+                            </Line>                        
+                        </Border>
+
+                        <CheckBox x:Name="checkBox"
+                                  Visibility="Collapsed"
+                                  IsChecked="{Binding (fluentui.desktop:TreeViewHelper.IsItemChecked), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeViewItem}, Mode=TwoWay}"
+                                  Grid.Column="1"/>
+
+                        <ToggleButton x:Name="expander" 
+                                Grid.Column="2"
+                                ClickMode="Press" 
+                                IsChecked="{Binding IsExpanded, RelativeSource={RelativeSource TemplatedParent}}" 
+                                Style="{StaticResource FluentUIDesktopExpandCollapseToggleStyle}">
+                            <ToggleButton.Margin>
+                                <Binding Path="." RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}" Converter="{StaticResource GetPositiveMarginForTreeViewItem}"/>
+                            </ToggleButton.Margin>
+                        </ToggleButton>
+
+                        <Border x:Name="Bd"
+                                Grid.Column="3" 
+                                BorderBrush="{TemplateBinding BorderBrush}" 
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                Padding="{TemplateBinding Padding}" 
+                                SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="PART_Header"
+                                              ContentSource="Header" 
+                                              HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                                              VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        
+                        <ItemsPresenter x:Name="ItemsHost" Grid.ColumnSpan="4" Grid.Row="1"/>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <MultiDataTrigger>
+                            <MultiDataTrigger.Conditions>
+                                <Condition Binding="{Binding (fluentui.desktop:TreeViewHelper.ShowCheckBoxes), RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=TreeView}}" Value="false"/>
+                                <Condition Binding="{Binding IsSelected, RelativeSource={RelativeSource Mode=Self}}" Value="True"/>
+                            </MultiDataTrigger.Conditions>
+                            <Setter Property="Visibility" TargetName="selectionLine" Value="Visible"/>
+                        </MultiDataTrigger>
+                        <DataTrigger Value="True">
+                            <DataTrigger.Binding>
+                                <Binding Path="(fluentui.desktop:TreeViewHelper.ShowCheckBoxes)" RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType=TreeView}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="Visibility" TargetName="checkBox" Value="Visible"/>
+                            <Setter Property="Margin" TargetName="checkBox">
+                                <Setter.Value>
+                                    <Binding Path="." RelativeSource="{RelativeSource Mode=FindAncestor, AncestorType={x:Type TreeViewItem}}" Converter="{StaticResource GetPositiveMarginForTreeViewItem}"/>
+                                </Setter.Value>
+                            </Setter>
+                            <Setter Property="Margin" TargetName="expander" Value="0,0,0,0"/>
+                        </DataTrigger>
+                        <Trigger Property="IsExpanded" Value="false">
+                            <Setter Property="Visibility" TargetName="ItemsHost" Value="Collapsed"/>
+                        </Trigger>
+                        <Trigger Property="HasItems" Value="false">
+                            <Setter Property="Visibility" TargetName="expander" Value="Hidden"/>
+                        </Trigger>
+                        <Trigger Property="IsSelected" Value="true">
+                            <Setter Property="Background" TargetName="selectionBd" Value="{StaticResource FillColorSubtleSecondary}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="True"/>
+                                <Condition Property="IsMouseOver" SourceName="ItemsHost" Value="False"/>
+                                <Condition Property="IsSelected" Value="False"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="selectionBd" Value="{StaticResource FillColorSubtleSecondary}"/>
+                        </MultiTrigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" Value="{StaticResource FillColorSubtleDisabled}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FillColorTextDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+        <Style.Triggers>
+            <Trigger Property="VirtualizingStackPanel.IsVirtualizing" Value="true">
+                <Setter Property="ItemsPanel">
+                    <Setter.Value>
+                        <ItemsPanelTemplate>
+                            <VirtualizingStackPanel/>
+                        </ItemsPanelTemplate>
+                    </Setter.Value>
+                </Setter>
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="FluentUIDesktopTreeViewStyle" TargetType="TreeView">
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
+    </Style>
+    
+</ResourceDictionary>

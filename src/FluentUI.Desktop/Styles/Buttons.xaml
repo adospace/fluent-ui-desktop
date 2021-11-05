@@ -1,5 +1,6 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fluentui.desktop="clr-namespace:FluentUI.Desktop">
     
     <Style x:Key="FluentUIDesktopFocusVisual">
         <Setter Property="Control.Template">
@@ -11,7 +12,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="FluentUIDesktopButtonStyle" TargetType="{x:Type Button}">
+    <Style x:Key="FluentUIDesktopButtonStyle" TargetType="Button">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource FillColorControlDefault}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ElevationControlBorder}"/>
@@ -35,7 +36,7 @@
                         <Trigger Property="IsPressed" Value="true">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlTertiary}"/>
                             <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
-                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource LightFillColorTextSecondary}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource FillColorTextSecondary}"/>
                         </Trigger>
                         <Trigger Property="IsEnabled" Value="false">
                             <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlDisabled}"/>
@@ -48,5 +49,120 @@
         </Setter>
     </Style>
 
+    <Style x:Key="FluentUIDesktopPrimaryButtonStyle" TargetType="fluentui.desktop:PrimaryButton">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource FillColorAccentDefault}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ElevationAccentControlBorder}"/>
+        <Setter Property="Foreground" Value="{StaticResource FillColorTextOnAccentPrimary}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="TextElement.FontSize" Value="12"/>
+        <Setter Property="Border.CornerRadius" Value="4"/>
+        <Setter Property="MinHeight" Value="32"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true" CornerRadius="{TemplateBinding Border.CornerRadius}">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentSecondary}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentTertiary}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource FillColorTextOnAccentSecondary}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentDisabled}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource FillColorTextOnAccentDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FluentUIDesktopToggleButtonStyle" TargetType="ToggleButton">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource FillColorControlDefault}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ElevationControlBorder}"/>
+        <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="TextElement.FontSize" Value="12"/>
+        <Setter Property="Border.CornerRadius" Value="4"/>
+        <Setter Property="MinHeight" Value="32"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type ToggleButton}">
+                    <Border x:Name="border" Background="{TemplateBinding Background}" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" SnapsToDevicePixels="true" CornerRadius="{TemplateBinding Border.CornerRadius}">
+                        <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsChecked" Value="True">
+                            <Setter Property="Background" Value="{StaticResource FillColorAccentDefault}"/>
+                            <Setter Property="BorderBrush" Value="{StaticResource ElevationAccentControlBorder}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FillColorTextOnAccentPrimary}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlSecondary}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlTertiary}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource FillColorTextSecondary}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="false"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlDisabled}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource FillColorTextDisabled}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsChecked" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentSecondary}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentTertiary}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource FillColorTextOnAccentSecondary}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsEnabled" Value="false"/>
+                                <Condition Property="IsChecked" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentDisabled}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource FillColorTextOnAccentDisabled}"/>
+                        </MultiTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 
 </ResourceDictionary>

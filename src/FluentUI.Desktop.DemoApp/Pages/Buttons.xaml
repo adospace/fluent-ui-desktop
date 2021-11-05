@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
-             xmlns:local="clr-namespace:FluentUI.Desktop.DemoApp.Pages"
+             xmlns:local="clr-namespace:FluentUI.Desktop.DemoApp.Pages" 
+             xmlns:fluentui.desktop="clr-namespace:FluentUI.Desktop;assembly=FluentUI.Desktop"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.Resources>
@@ -11,13 +12,33 @@
             <Setter Property="Margin" Value="0,5"/>
         </Style>
     </UserControl.Resources>
-    <StackPanel
-        HorizontalAlignment="Left"
-        Margin="10">
-        <TextBlock Text="Normal Button" />
-        <Button Content="Click Me!" />
-        
-        <TextBlock Text="Disabled Button" />
-        <Button Content="Click Me!" IsEnabled="False"/>
+    <StackPanel Orientation="Horizontal">
+        <StackPanel
+            HorizontalAlignment="Left"
+            Margin="10">
+            <TextBlock Text="Normal Button" />
+            <Button Content="Click Me!" />
+
+            <TextBlock Text="Disabled Button" />
+            <Button Content="Click Me!" IsEnabled="False"/>
+        </StackPanel>
+        <StackPanel
+            HorizontalAlignment="Left"
+            Margin="10">
+            <TextBlock Text="Normal Primary Button" />
+            <fluentui.desktop:PrimaryButton Content="Click Me!" />
+
+            <TextBlock Text="Disabled Primary Button" />
+            <fluentui.desktop:PrimaryButton Content="Click Me!" IsEnabled="False"/>
+        </StackPanel>
+        <StackPanel
+            HorizontalAlignment="Left"
+            Margin="10">
+            <TextBlock Text="Normal Toggle Button" />
+            <ToggleButton Content="Toggle Me!" />
+
+            <TextBlock Text="Disabled Toggle Button" />
+            <ToggleButton Content="Toggle Me!" IsEnabled="False"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>

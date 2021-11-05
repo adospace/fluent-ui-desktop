@@ -4,12 +4,19 @@
 
     <ResourceDictionary.MergedDictionaries>
         <ResourceDictionary Source="Buttons.xaml"/>
+        <ResourceDictionary Source="TreeView.xaml"/>
+        <ResourceDictionary Source="CheckBox.xaml"/>
         <ResourceDictionary Source="Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
     <Style TargetType="fluentui.desktop:WindowChromeButton" BasedOn="{StaticResource FluentUIDesktopButtonStyle}"/>
     <Style TargetType="Button" BasedOn="{StaticResource FluentUIDesktopButtonStyle}"/>
+    <Style TargetType="fluentui.desktop:PrimaryButton" BasedOn="{StaticResource FluentUIDesktopPrimaryButtonStyle}"/>
+    <Style TargetType="ToggleButton" BasedOn="{StaticResource FluentUIDesktopToggleButtonStyle}"/>
+    <Style TargetType="TreeView" BasedOn="{StaticResource FluentUIDesktopTreeViewStyle}"/>
+    <Style TargetType="TreeViewItem" BasedOn="{StaticResource FluentUIDesktopTreeViewItemStyle}"/>
+    <Style TargetType="CheckBox" BasedOn="{StaticResource FluentUIDesktopCheckBoxStyle}"/>
     <Style TargetType="Window" BasedOn="{StaticResource FluentUIDesktopWindowStyle}"/>
 
 </ResourceDictionary>

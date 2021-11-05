@@ -31,6 +31,8 @@
             >
             <TreeViewItem Header="Core Controls" IsExpanded="True">
                 <TreeViewItem x:Name="navButtons" Header="Buttons" Tag="Buttons"/>
+                <TreeViewItem x:Name="navCheckBox" Header="CheckBox" Tag="CheckBox"/>
+                <TreeViewItem x:Name="navTreeView" Header="TreeView" Tag="TreeView"/>
             </TreeViewItem>
         </TreeView>
 
