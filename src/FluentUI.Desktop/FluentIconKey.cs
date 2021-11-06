@@ -3,6 +3,10 @@
     public enum FluentIconKey
     {
         None = 0,
+        CaretRight = 0xEDDA,
+        CaretLeft = 0xEDD9,
+        CaretDown = 0xEDDC,
+        CaretUp = 0xEDDB,
         GlobalNavButton = 0xE700,
         Wifi = 0xE701,
         Bluetooth = 0xE702,

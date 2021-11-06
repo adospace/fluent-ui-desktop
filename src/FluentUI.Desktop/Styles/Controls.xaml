@@ -8,6 +8,7 @@
         <ResourceDictionary Source="CheckBox.xaml"/>
         <ResourceDictionary Source="Menus.xaml"/>
         <ResourceDictionary Source="Window.xaml"/>
+        <ResourceDictionary Source="ScrollBars.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
@@ -22,5 +23,6 @@
     <Style TargetType="ContextMenu" BasedOn="{StaticResource FluentUIDesktopContextMenuStyle}"/>
     <Style TargetType="MenuItem" BasedOn="{StaticResource FluentUIDesktopMenuItemStyle}"/>
     <Style TargetType="Window" BasedOn="{StaticResource FluentUIDesktopWindowStyle}"/>
+    <Style TargetType="ScrollBar" BasedOn="{StaticResource FluentUIDesktopScrollBarStyle}"/>
 
 </ResourceDictionary>

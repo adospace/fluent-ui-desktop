@@ -32,10 +32,15 @@
             <TreeViewItem Header="Core Controls" IsExpanded="True">
                 <TreeViewItem Header="Buttons" Tag="Buttons"/>
                 <TreeViewItem Header="CheckBox" Tag="CheckBox"/>
-                <TreeViewItem Header="TreeView" Tag="TreeView"/>
             </TreeViewItem>
             <TreeViewItem Header="Menu &amp; Toolbars" IsExpanded="True">
                 <TreeViewItem Header="Menus" Tag="Menus"/>
+            </TreeViewItem>
+            <TreeViewItem Header="List &amp; Collections" IsExpanded="True">
+                <TreeViewItem Header="TreeView" Tag="TreeView"/>
+            </TreeViewItem>
+            <TreeViewItem Header="Scrolling" IsExpanded="True">
+                <TreeViewItem Header="ScrollBars" Tag="ScrollBars"/>
             </TreeViewItem>
         </TreeView>
 
