@@ -22,7 +22,7 @@ namespace FluentUI.Desktop.DemoApp
     {
         public App()
         {
-            SetTheme(Theme.Dark);
+            SetTheme(Theme.Light);
         }
 
         public static void SetTheme(Theme theme)

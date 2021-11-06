@@ -115,4 +115,10 @@
     <SolidColorBrush x:Key="BackgroundFillColorSolidBackgroundTertiary" Color="#FFF9F9F9" po:Freeze="True"/>
     <SolidColorBrush x:Key="BackgroundFillColorSolidBackgroundQuarternary" Color="#FFFFFFFF" po:Freeze="True"/>
 
+
+    <DropShadowEffect x:Key="Depth4" Color="#FFF9F9F9" BlurRadius="4" Direction="-90" RenderingBias="Performance" ShadowDepth="1" po:Freeze="True"/>
+    <DropShadowEffect x:Key="Depth8" Color="#FFF9F9F9" BlurRadius="8" Direction="-90" RenderingBias="Performance" ShadowDepth="2" po:Freeze="True"/>
+    <DropShadowEffect x:Key="Depth16" Color="#FFF9F9F9" BlurRadius="16" Direction="-90" RenderingBias="Performance" ShadowDepth="4" po:Freeze="True"/>
+    <DropShadowEffect x:Key="Depth64" Color="#FFF9F9F9" BlurRadius="64" Direction="-90" RenderingBias="Performance" ShadowDepth="20" po:Freeze="True"/>
+
 </ResourceDictionary>

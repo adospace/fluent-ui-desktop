@@ -30,9 +30,12 @@
             SelectedItemChanged="TreeView_SelectedItemChanged"
             >
             <TreeViewItem Header="Core Controls" IsExpanded="True">
-                <TreeViewItem x:Name="navButtons" Header="Buttons" Tag="Buttons"/>
-                <TreeViewItem x:Name="navCheckBox" Header="CheckBox" Tag="CheckBox"/>
-                <TreeViewItem x:Name="navTreeView" Header="TreeView" Tag="TreeView"/>
+                <TreeViewItem Header="Buttons" Tag="Buttons"/>
+                <TreeViewItem Header="CheckBox" Tag="CheckBox"/>
+                <TreeViewItem Header="TreeView" Tag="TreeView"/>
+            </TreeViewItem>
+            <TreeViewItem Header="Menu &amp; Toolbars" IsExpanded="True">
+                <TreeViewItem Header="Menus" Tag="Menus"/>
             </TreeViewItem>
         </TreeView>
 

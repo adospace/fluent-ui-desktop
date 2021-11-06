@@ -6,6 +6,7 @@
         <ResourceDictionary Source="Buttons.xaml"/>
         <ResourceDictionary Source="TreeView.xaml"/>
         <ResourceDictionary Source="CheckBox.xaml"/>
+        <ResourceDictionary Source="Menus.xaml"/>
         <ResourceDictionary Source="Window.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
@@ -17,6 +18,9 @@
     <Style TargetType="TreeView" BasedOn="{StaticResource FluentUIDesktopTreeViewStyle}"/>
     <Style TargetType="TreeViewItem" BasedOn="{StaticResource FluentUIDesktopTreeViewItemStyle}"/>
     <Style TargetType="CheckBox" BasedOn="{StaticResource FluentUIDesktopCheckBoxStyle}"/>
+    <Style TargetType="Menu" BasedOn="{StaticResource FluentUIDesktopMenuStyle}"/>
+    <Style TargetType="ContextMenu" BasedOn="{StaticResource FluentUIDesktopContextMenuStyle}"/>
+    <Style TargetType="MenuItem" BasedOn="{StaticResource FluentUIDesktopMenuItemStyle}"/>
     <Style TargetType="Window" BasedOn="{StaticResource FluentUIDesktopWindowStyle}"/>
 
 </ResourceDictionary>
