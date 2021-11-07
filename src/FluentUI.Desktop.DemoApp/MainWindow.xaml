@@ -29,17 +29,17 @@
             Grid.Row="1"
             SelectedItemChanged="TreeView_SelectedItemChanged"
             >
-            <TreeViewItem Header="Core Controls" IsExpanded="True">
+            <TreeViewItem Header="Core Controls" IsExpanded="True" Tag="Buttons">
                 <TreeViewItem Header="Buttons" Tag="Buttons"/>
                 <TreeViewItem Header="CheckBox" Tag="CheckBox"/>
             </TreeViewItem>
-            <TreeViewItem Header="Menu &amp; Toolbars" IsExpanded="True">
+            <TreeViewItem Header="Menu &amp; Toolbars" IsExpanded="True" Tag="Menus">
                 <TreeViewItem Header="Menus" Tag="Menus"/>
             </TreeViewItem>
-            <TreeViewItem Header="List &amp; Collections" IsExpanded="True">
+            <TreeViewItem Header="List &amp; Collections" IsExpanded="True" Tag="TreeView">
                 <TreeViewItem Header="TreeView" Tag="TreeView"/>
             </TreeViewItem>
-            <TreeViewItem Header="Scrolling" IsExpanded="True">
+            <TreeViewItem Header="Scrolling" IsExpanded="True" Tag="ScrollBars">
                 <TreeViewItem Header="ScrollBars" Tag="ScrollBars"/>
             </TreeViewItem>
         </TreeView>
