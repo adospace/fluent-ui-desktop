@@ -1,0 +1,172 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:fluentui.desktop="clr-namespace:FluentUI.Desktop"
+                    xmlns:fluentui.desktop.converters="clr-namespace:FluentUI.Desktop.Converters">
+    
+    <!--<FluentUIDesktop.converters:NullToVisibilityConverter x:Key="NullToVisibilityConverter"/>
+    <FluentUIDesktop.converters:BoolToVisibilityConverter x:Key="BoolToVisibilityConverter"/>
+    <FluentUIDesktop.converters:NullToBoolConverter x:Key="NullToBoolConverter"/>
+    <FluentUIDesktop.converters:InverseNullToBoolConverter x:Key="InverseNullToBoolConverter"/>
+    <FluentUIDesktop.converters:InverseNullToVisibilityConverter x:Key="InverseNullToVisibilityConverter"/>-->
+    <fluentui.desktop.converters:StringEmptyToBoolConverter x:Key="StringEmptyToBoolConverter"/>
+
+    <Style x:Key="FluentUIDesktopTextBoxStyle" BasedOn="{x:Null}" TargetType="{x:Type TextBox}">
+        <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="Background" Value="{StaticResource FillColorControlDefault}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ElevationTextControlBorder}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource FillColorAccentSelectedTextBackground}"/>
+        <!-- NOT WORKING: https://github.com/dotnet/wpf/issues/4571 -->
+        <Setter Property="SelectionTextBrush" Value="{StaticResource FillColorTextOnAccentSecondary}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="9,0"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type TextBox}">
+                    <Grid>
+                        <Border x:Name="Bd" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="true" 
+                                CornerRadius="4" 
+                                MinHeight="32">
+                            <Grid x:Name="Wm"
+                                  VerticalAlignment="Center" >
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                <TextBlock x:Name="ph" 
+                                               Text="{TemplateBinding fluentui.desktop:TextBoxHelper.Placeholder}" 
+                                               Foreground="{StaticResource FillColorTextSecondary}"
+                                               Padding="11,0,0,0" 
+                                               IsHitTestVisible="False"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="activeBorderContainer"
+                                Height="1"
+                                VerticalAlignment="Bottom"
+                                ClipToBounds="True">
+                                <Rectangle x:Name="activeBorder"
+                                           Fill="{StaticResource TextBoxBottomBorder}"
+                                           Height="8"
+                                           RadiusX="4"
+                                           RadiusY="4"
+                                           VerticalAlignment="Bottom"
+                                           Margin="0,-8,0,0">
+                                </Rectangle>
+                        </Border>
+                    </Grid>
+                        
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                            <Setter Property="Fill" TargetName="activeBorder" Value="{StaticResource FillColorAccentDefault}"/>
+                            <Setter Property="Height" TargetName="activeBorderContainer" Value="2"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{StaticResource FillColorTextDisabled}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource FillColorControlDisabled}"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsFocused" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource FillColorControlDefault}"/>
+                        </MultiTrigger>
+                        <DataTrigger Value="false">
+                            <DataTrigger.Binding>
+                                <Binding Path="Text" RelativeSource="{RelativeSource Self}" Converter="{StaticResource StringEmptyToBoolConverter}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="Visibility" TargetName="ph" Value="Hidden"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="FluentUIDesktopPasswordBoxStyle" TargetType="{x:Type PasswordBox}">
+        <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="Background" Value="{StaticResource FillColorControlDefault}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ElevationTextControlBorder}"/>
+        <Setter Property="CaretBrush" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="SelectionBrush" Value="{StaticResource FillColorAccentSelectedTextBackground}"/>
+        <!-- NOT WORKING: https://github.com/dotnet/wpf/issues/4571 -->
+        <Setter Property="SelectionTextBrush" Value="{StaticResource FillColorTextOnAccentSecondary}"/>
+        <Setter Property="PasswordChar" Value="●"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="Padding" Value="9,0"/>
+        <Setter Property="AllowDrop" Value="true"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="fluentui.desktop:PasswordBoxHelper.CheckPasswordIsEmpty" Value="True"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type PasswordBox}">
+                    <Grid>
+                        <Border x:Name="Bd" 
+                                BorderBrush="{TemplateBinding BorderBrush}"
+                                BorderThickness="{TemplateBinding BorderThickness}" 
+                                Background="{TemplateBinding Background}" 
+                                SnapsToDevicePixels="true" 
+                                CornerRadius="4" 
+                                MinHeight="32">
+                            <Grid x:Name="Wm"
+                                  VerticalAlignment="Center" >
+                                <ScrollViewer x:Name="PART_ContentHost"
+                                              SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" />
+                                <TextBlock x:Name="ph" 
+                                               Text="{TemplateBinding fluentui.desktop:TextBoxHelper.Placeholder}" 
+                                               Foreground="{StaticResource FillColorTextSecondary}"
+                                               Padding="11,0,0,0" 
+                                               IsHitTestVisible="False"/>
+                            </Grid>
+                        </Border>
+                        <Border x:Name="activeBorderContainer"
+                                Height="1"
+                                VerticalAlignment="Bottom"
+                                ClipToBounds="True">
+                            <Rectangle x:Name="activeBorder"
+                                           Fill="{StaticResource TextBoxBottomBorder}"
+                                           Height="8"
+                                           RadiusX="4"
+                                           RadiusY="4"
+                                           VerticalAlignment="Bottom"
+                                           Margin="0,-8,0,0">
+                            </Rectangle>
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsKeyboardFocusWithin" Value="true">
+                            <Setter Property="Fill" TargetName="activeBorder" Value="{StaticResource FillColorAccentDefault}"/>
+                            <Setter Property="Height" TargetName="activeBorderContainer" Value="2"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="TextElement.Foreground" TargetName="Bd" Value="{StaticResource FillColorTextDisabled}"/>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource FillColorControlDisabled}"/>
+                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
+                        </Trigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsMouseOver" Value="true"/>
+                                <Condition Property="IsFocused" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource FillColorControlDefault}"/>
+                        </MultiTrigger>
+                        <DataTrigger Value="false">
+                            <DataTrigger.Binding>
+                                <Binding Path="(fluentui.desktop:PasswordBoxHelper.IsPasswordEmpty)" RelativeSource="{RelativeSource Self}"/>
+                            </DataTrigger.Binding>
+                            <Setter Property="Visibility" TargetName="ph" Value="Hidden"/>
+                        </DataTrigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+</ResourceDictionary>

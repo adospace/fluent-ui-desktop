@@ -6,7 +6,7 @@
     <Style x:Key="FluentUIDesktopWindowStyle" TargetType="Window">
         <Setter Property="Foreground" Value="{DynamicResource FillColorTextPrimary}"/>
         <Setter Property="Background" Value="{DynamicResource DefaultBackground}"/>
-        <Setter Property="FontSize" Value="12"/>
+        <Setter Property="TextElement.FontSize" Value="14"/>
         <Setter Property="WindowChrome.WindowChrome">
             <Setter.Value>
                 <WindowChrome 

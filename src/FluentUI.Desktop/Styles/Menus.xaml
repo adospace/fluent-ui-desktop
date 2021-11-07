@@ -409,6 +409,7 @@
     <Style x:Key="FluentUIDesktopMenuStyle" TargetType="{x:Type Menu}">
         <Setter Property="Background" Value="{StaticResource FillColorSubtleTransparent}"/>
         <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="TextElement.FontSize" Value="14"/>
     </Style>
 
     <Style x:Key="FluentUIDesktopContextMenuStyle" TargetType="{x:Type ContextMenu}">

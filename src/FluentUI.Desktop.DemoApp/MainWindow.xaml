@@ -33,6 +33,9 @@
                 <TreeViewItem Header="Buttons" Tag="Buttons"/>
                 <TreeViewItem Header="CheckBox" Tag="CheckBox"/>
             </TreeViewItem>
+            <TreeViewItem Header="Text Fields" IsExpanded="True" Tag="TextBoxes">
+                <TreeViewItem Header="TextBoxes" Tag="TextBoxes"/>
+            </TreeViewItem>
             <TreeViewItem Header="Menu &amp; Toolbars" IsExpanded="True" Tag="Menus">
                 <TreeViewItem Header="Menus" Tag="Menus"/>
             </TreeViewItem>

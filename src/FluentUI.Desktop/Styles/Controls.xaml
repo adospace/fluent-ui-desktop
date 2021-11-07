@@ -9,6 +9,7 @@
         <ResourceDictionary Source="Menus.xaml"/>
         <ResourceDictionary Source="Window.xaml"/>
         <ResourceDictionary Source="ScrollBars.xaml"/>
+        <ResourceDictionary Source="TextBoxes.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
@@ -24,5 +25,7 @@
     <Style TargetType="MenuItem" BasedOn="{StaticResource FluentUIDesktopMenuItemStyle}"/>
     <Style TargetType="Window" BasedOn="{StaticResource FluentUIDesktopWindowStyle}"/>
     <Style TargetType="ScrollBar" BasedOn="{StaticResource FluentUIDesktopScrollBarStyle}"/>
+    <Style TargetType="TextBox" BasedOn="{StaticResource FluentUIDesktopTextBoxStyle}"/>
+    <Style TargetType="PasswordBox" BasedOn="{StaticResource FluentUIDesktopPasswordBoxStyle}"/>
 
 </ResourceDictionary>

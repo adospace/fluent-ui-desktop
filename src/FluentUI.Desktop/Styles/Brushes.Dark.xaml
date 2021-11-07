@@ -120,4 +120,5 @@
     <DropShadowEffect x:Key="Depth16" Color="#FF282828" BlurRadius="16" Direction="-90" RenderingBias="Performance" ShadowDepth="4" po:Freeze="True"/>
     <DropShadowEffect x:Key="Depth64" Color="#FF282828" BlurRadius="64" Direction="-90" RenderingBias="Performance" ShadowDepth="20" po:Freeze="True"/>
 
+    <SolidColorBrush x:Key="TextBoxBottomBorder" Color="#FF8A8A8A" po:Freeze="True"/>
 </ResourceDictionary>
