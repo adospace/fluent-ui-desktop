@@ -40,5 +40,17 @@
             <TextBlock Text="Disabled Toggle Button" />
             <ToggleButton Content="Toggle Me!" IsEnabled="False"/>
         </StackPanel>
+        <StackPanel
+            HorizontalAlignment="Left"
+            Margin="10">
+            <TextBlock Text="Toggle Switch with Text" />
+            <ToggleButton Style="{StaticResource FluentUIDesktopToggleSwitchStyle}" Content="Toggle Me!" />
+
+            <TextBlock Text="Toggle Switch" />
+            <ToggleButton Style="{StaticResource FluentUIDesktopToggleSwitchStyle}" />
+
+            <TextBlock Text="Disabled Toggle Switch" />
+            <ToggleButton Style="{StaticResource FluentUIDesktopToggleSwitchStyle}" Content="Toggle Me!" IsEnabled="False"/>
+        </StackPanel>
     </StackPanel>
 </UserControl>
