@@ -10,6 +10,7 @@
         <ResourceDictionary Source="Window.xaml"/>
         <ResourceDictionary Source="ScrollBars.xaml"/>
         <ResourceDictionary Source="TextBoxes.xaml"/>
+        <ResourceDictionary Source="ComboBox.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
 
@@ -27,5 +28,7 @@
     <Style TargetType="ScrollBar" BasedOn="{StaticResource FluentUIDesktopScrollBarStyle}"/>
     <Style TargetType="TextBox" BasedOn="{StaticResource FluentUIDesktopTextBoxStyle}"/>
     <Style TargetType="PasswordBox" BasedOn="{StaticResource FluentUIDesktopPasswordBoxStyle}"/>
+    <Style TargetType="ComboBox" BasedOn="{StaticResource FluentUIDesktopComboBoxStyle}"/>
+    <Style TargetType="ComboBoxItem" BasedOn="{StaticResource FluentUIDesktopComboBoxItemStyle}"/>
 
 </ResourceDictionary>
