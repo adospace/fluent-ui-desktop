@@ -198,49 +198,63 @@
                                    VerticalAlignment="{TemplateBinding VerticalContentAlignment}" 
                                    Margin="8,0"/>
                     </StackPanel>
-                    <!--<ControlTemplate.Triggers>
+                    <ControlTemplate.Triggers>
                         <Trigger Property="IsChecked" Value="True">
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Communication.CommunicationPrimary}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentDefault}"/>
                             <Setter Property="BorderThickness" TargetName="border" Value="0"/>
-                            <Setter Property="Fill" TargetName="circle" Value="{StaticResource Neutral.White}"/>
+                            <Setter Property="Fill" TargetName="circle" Value="{StaticResource FillColorTextOnAccentPrimary}"/>
                             <Setter Property="Margin" TargetName="circle" Value="24,4,4,4"/>
-                        </Trigger>
-                        <Trigger Property="Button.IsDefaulted" Value="true">
-                            <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
-                        </Trigger>
+                        </Trigger>                        
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="true"/>
                                 <Condition Property="IsChecked" Value="false"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Neutral.Gray190}"/>
-                            <Setter Property="Fill" TargetName="circle" Value="{StaticResource Neutral.Gray190}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlAltTertiary}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsMouseOver" Value="true"/>
                                 <Condition Property="IsChecked" Value="true"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Communication.CommunicationShade20}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentSecondary}"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="false"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlAltQuarternary}"/>
+                            <Setter Property="Width" TargetName="circle" Value="14"/>
+                        </MultiTrigger>
+                        <MultiTrigger>
+                            <MultiTrigger.Conditions>
+                                <Condition Property="IsPressed" Value="true"/>
+                                <Condition Property="IsChecked" Value="true"/>
+                            </MultiTrigger.Conditions>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentTertiary}"/>
+                            <Setter Property="Margin" TargetName="circle" Value="22,4,4,4"/>
+                            <Setter Property="Width" TargetName="circle" Value="14"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsEnabled" Value="false"/>
                                 <Condition Property="IsChecked" Value="false"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Neutral.Gray60}"/>
-                            <Setter Property="Fill" TargetName="circle" Value="{StaticResource Neutral.Gray60}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray60}"/>
+                            <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource StrokeColorControlStrongStrokeDisabled}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlAltDisabled}"/>
+                            <Setter Property="Fill" TargetName="circle" Value="{StaticResource FillColorTextDisabled}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FillColorTextDisabled}"/>
                         </MultiTrigger>
                         <MultiTrigger>
                             <MultiTrigger.Conditions>
                                 <Condition Property="IsEnabled" Value="false"/>
                                 <Condition Property="IsChecked" Value="true"/>
                             </MultiTrigger.Conditions>
-                            <Setter Property="Background" TargetName="border" Value="{StaticResource Neutral.Gray60}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray60}"/>
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorAccentDisabled}"/>
+                            <Setter Property="Foreground" Value="{StaticResource FillColorTextDisabled}"/>
                         </MultiTrigger>
-                    </ControlTemplate.Triggers>-->
+                    </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
         </Setter>
