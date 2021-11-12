@@ -2,41 +2,53 @@
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:fluentui.desktop="clr-namespace:FluentUI.Desktop">
 
+    <ResourceDictionary.MergedDictionaries>
+        <ResourceDictionary Source="TextBoxes.xaml"/>
+    </ResourceDictionary.MergedDictionaries>
+
+    <Style x:Key="FluentUIDesktopComboBoxFocusVisual">
+        <Setter Property="Control.Template">
+            <Setter.Value>
+                <ControlTemplate>
+                    <Rectangle Margin="-2" RadiusX="3" RadiusY="3" SnapsToDevicePixels="true" StrokeThickness="1" Stroke="{StaticResource FillColorTextPrimary}"/>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+    
     <Style x:Key="FluentUIDesktopComboBoxReadonlyToggleButton" TargetType="ToggleButton">
         <Setter Property="OverridesDefaultStyle" Value="true"/>
         <Setter Property="IsTabStop" Value="false"/>
         <Setter Property="Focusable" Value="false"/>
         <Setter Property="ClickMode" Value="Press"/>
-        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="BorderThickness" Value="0"/>
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border x:Name="Bd" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            Background="{TemplateBinding Background}" 
-                            CornerRadius="1"
+                            Background="{TemplateBinding Background}"
                             SnapsToDevicePixels="true">
-                        <Border x:Name="Arrow" HorizontalAlignment="Right" Width="32">
-                            <fluentui.desktop:FluentIcon Icon="ChevronDown" 
-                                               VerticalAlignment="Center" 
-                                               HorizontalAlignment="Center" />
-                        </Border>
+                        <fluentui.desktop:FluentIcon Icon="ChevronDown" 
+                                                     VerticalAlignment="Center" 
+                                                     HorizontalAlignment="Right"
+                                                     Margin="8,9,10,9"
+                                                    />
                     </Border>
 
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextDisabled}"/>
                         </Trigger>
-                        <MultiTrigger>
-                            <MultiTrigger.Conditions>
-                                <Condition Property="IsMouseOver" Value="true"/>
-                                <Condition Property="IsFocused" Value="false"/>
-                            </MultiTrigger.Conditions>
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray160}"/>
-                        </MultiTrigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextSecondary}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextTertiary}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextSecondary}"/>
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
@@ -52,22 +64,30 @@
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ToggleButton}">
                     <Border x:Name="Bd" 
-                            BorderThickness="{TemplateBinding BorderThickness}" 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
                             Background="{TemplateBinding Background}" 
-                            CornerRadius="1"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            Grid.ColumnSpan="2"
+                            CornerRadius="4"
                             SnapsToDevicePixels="true">
-                        <Border x:Name="Arrow" HorizontalAlignment="Right" Width="32">
-                            <fluentui.desktop:FluentIcon Icon="ChevronDown" 
-                                               VerticalAlignment="Center" 
-                                               HorizontalAlignment="Center" />
-                        </Border>
+                        <fluentui.desktop:FluentIcon Icon="ChevronDown" 
+                                                     VerticalAlignment="Center" 
+                                                     HorizontalAlignment="Right"
+                                                     Margin="8,9,10,9"
+                                                    />
                     </Border>
                     <ControlTemplate.Triggers>
-                        <Trigger Property="IsEnabled" Value="false">
-                            <Setter Property="BorderBrush" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="Background" TargetName="Bd" Value="{StaticResource Neutral.Gray20}"/>
-                            <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextDisabled}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextSecondary}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="True">
+                            <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextTertiary}"/>
+                        </Trigger>
+                        <Trigger Property="IsFocused" Value="True">
+                            <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextSecondary}"/>
                         </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
@@ -75,22 +95,17 @@
         </Setter>
     </Style>
 
-    <Style x:Key="FluentUIDesktopComboBoxEditableTextBox" TargetType="{x:Type TextBox}" BasedOn="{x:Null}">
-        <Setter Property="Foreground" Value="{StaticResource Neutral.Gray160}"/>
+    <Style x:Key="FluentUIDesktopComboBoxEditableTextBox" TargetType="{x:Type TextBox}" BasedOn="{StaticResource FluentUIDesktopTextBoxStyle}">
+        <Setter Property="Background" Value="Transparent"/>
         <Setter Property="Padding" Value="0"/>
         <Setter Property="HorizontalAlignment" Value="Stretch"/>
         <Setter Property="VerticalAlignment" Value="Center"/>
-        <Style.Triggers>
-            <Trigger Property="IsEnabled" Value="False">
-                <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
-            </Trigger>
-        </Style.Triggers>
     </Style>
 
     <ControlTemplate x:Key="FluentUIDesktopComboBoxEditableTemplate" TargetType="{x:Type ComboBox}">
         <Grid x:Name="MainGrid" SnapsToDevicePixels="true">
             <Grid.RowDefinitions>
-                <RowDefinition MinHeight="32"/>
+                <RowDefinition MinHeight="30"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
@@ -98,17 +113,18 @@
                 <ColumnDefinition Width="32"/>
             </Grid.ColumnDefinitions>
             <TextBox x:Name="PART_EditableTextBox" 
-                BorderThickness="0"
-                HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
-                Margin="{TemplateBinding Padding}" 
-                SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
-                VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
-                Style="{StaticResource FluentUIDesktopComboBoxEditableTextBox}"/>
+                     Grid.ColumnSpan="2"
+                     Padding="{TemplateBinding Padding}"
+                     HorizontalContentAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                     BorderBrush="{TemplateBinding BorderBrush}"
+                     Background="{TemplateBinding Background}" 
+                     SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
+                     VerticalContentAlignment="{TemplateBinding VerticalContentAlignment}"
+                     Style="{StaticResource FluentUIDesktopComboBoxEditableTextBox}"/>
             <ToggleButton x:Name="tb" 
-                BorderThickness="{TemplateBinding BorderThickness}"
-                BorderBrush="{TemplateBinding BorderBrush}"
-                Background="{TemplateBinding Background}" 
-                Grid.ColumnSpan="2" 
+                BorderThickness="0"
+                Background="Transparent" 
+                Grid.Column="2" 
                 IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                 Style="{StaticResource FluentUIDesktopComboBoxToggleButton}"/>
             <Popup x:Name="PART_Popup" 
@@ -116,22 +132,10 @@
                 Focusable="false" 
                 IsOpen="{Binding IsDropDownOpen, RelativeSource={RelativeSource TemplatedParent}}" 
                 Placement="Bottom"
-                PlacementTarget="{Binding ElementName=tb}"
+                PlacementTarget="{Binding ElementName=PART_EditableTextBox}"
                 Grid.ColumnSpan="2" 
-                Margin="1" 
-                >
-                <!--<Border Background="{StaticResource Neutral.White}" 
-                                    Margin="10,0,10,10" 
-                                    Effect="{StaticResource Depth8}"
-                                    MaxHeight="{TemplateBinding MaxDropDownHeight}" 
-                                    MinWidth="{Binding ActualWidth, ElementName=MainGrid}">
-                    <ScrollViewer CanContentScroll="true">
-                        <ItemsPresenter 
-                                        KeyboardNavigation.DirectionalNavigation="Contained" 
-                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                    </ScrollViewer>
-                </Border>-->
-                <Border Background="{TemplateBinding Background}" 
+                Margin="1">
+                <Border Background="{StaticResource BackgroundFillColorSolidBackgroundTertiary}" 
                         BorderThickness="1"
                         BorderBrush="{StaticResource StrokeColorSurfaceStrokeFlyout}"
                         Margin="10,0,10,10" 
@@ -149,25 +153,25 @@
             </Popup>
         </Grid>
         <ControlTemplate.Triggers>
-            <Trigger Property="IsEnabled" Value="false">
+            <!--<Trigger Property="IsEnabled" Value="false">
                 <Setter Property="BorderBrush" Value="{StaticResource Neutral.Gray20}"/>
                 <Setter Property="Background" Value="{StaticResource Neutral.Gray20}"/>
                 <Setter Property="Foreground" Value="{StaticResource Neutral.Gray90}"/>
-            </Trigger>
+            </Trigger>-->
             <Trigger Property="IsGrouping" Value="true">
                 <Setter Property="ScrollViewer.CanContentScroll" Value="false"/>
             </Trigger>
-            <Trigger Property="IsKeyboardFocusWithin" Value="true">
+            <!--<Trigger Property="IsKeyboardFocusWithin" Value="true">
                 <Setter Property="BorderBrush" TargetName="tb" Value="{StaticResource Communication.CommunicationPrimary}"/>
                 <Setter Property="BorderThickness" TargetName="tb" Value="2"/>
-            </Trigger>
-            <MultiTrigger>
+            </Trigger>-->
+            <!--<MultiTrigger>
                 <MultiTrigger.Conditions>
                     <Condition Property="IsMouseOver" Value="true"/>
                     <Condition Property="IsKeyboardFocusWithin" Value="false"/>
                 </MultiTrigger.Conditions>
                 <Setter Property="BorderBrush" TargetName="tb" Value="{StaticResource Neutral.Gray160}"/>
-            </MultiTrigger>
+            </MultiTrigger>-->
         </ControlTemplate.Triggers>
     </ControlTemplate>
 
@@ -205,20 +209,20 @@
     </Style>
 
     <Style x:Key="FluentUIDesktopComboBoxStyle" TargetType="ComboBox">
-        <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
-        <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopComboBoxFocusVisual}"/>
+        <Setter Property="TextElement.Foreground" Value="{StaticResource FillColorTextPrimary}"/>
         <Setter Property="Background" Value="{StaticResource FillColorControlDefault}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ElevationControlBorder}"/>
         <Setter Property="BorderThickness" Value="1"/>
         <Setter Property="ScrollViewer.HorizontalScrollBarVisibility" Value="Auto"/>
         <Setter Property="ScrollViewer.VerticalScrollBarVisibility" Value="Auto"/>
-        <Setter Property="Padding" Value="8,0"/>
+        <Setter Property="Padding" Value="8,4,32,7"/>
         <Setter Property="Template">
             <Setter.Value>
                 <ControlTemplate TargetType="{x:Type ComboBox}">
                     <Grid x:Name="MainGrid" SnapsToDevicePixels="true">
                         <Grid.RowDefinitions>
-                            <RowDefinition MinHeight="32"/>
+                            <RowDefinition MinHeight="30"/>
                             <RowDefinition Height="Auto"/>
                         </Grid.RowDefinitions>
                         <Grid.ColumnDefinitions>
@@ -229,8 +233,10 @@
                             x:Name="bd"
                             BorderBrush="{TemplateBinding BorderBrush}"
                             BorderThickness="{TemplateBinding BorderThickness}"
+                            Background="{TemplateBinding Background}"
                             Grid.ColumnSpan="2"
                             IsHitTestVisible="False"
+                            CornerRadius="4"
                             />
                         <ContentPresenter 
                             x:Name="contentPresenter"
@@ -244,8 +250,8 @@
                             SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" 
                             VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
                         <ToggleButton 
-                            BorderBrush="{TemplateBinding BorderBrush}" 
-                            Background="{TemplateBinding Background}" 
+                            BorderThickness="0"
+                            Background="Transparent"
                             Grid.ColumnSpan="2" 
                             IsChecked="{Binding IsDropDownOpen, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                             Style="{StaticResource FluentUIDesktopComboBoxReadonlyToggleButton}"/>
@@ -258,18 +264,7 @@
                                Grid.ColumnSpan="2" 
                                Margin="1" 
                                >
-                            <!--<Border Background="{StaticResource Neutral.White}" 
-                                    Margin="10,0,10,10" 
-                                    Effect="{StaticResource Depth8}"
-                                    MaxHeight="{TemplateBinding MaxDropDownHeight}" 
-                                    MinWidth="{Binding ActualWidth, ElementName=MainGrid}">
-                                <ScrollViewer CanContentScroll="true">
-                                    <ItemsPresenter 
-                                        KeyboardNavigation.DirectionalNavigation="Contained" 
-                                        SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"/>
-                                </ScrollViewer>
-                            </Border>-->
-                            <Border Background="{TemplateBinding Background}" 
+                            <Border Background="{StaticResource BackgroundFillColorSolidBackgroundTertiary}" 
                                 BorderThickness="1"
                                 BorderBrush="{StaticResource StrokeColorSurfaceStrokeFlyout}"
                                 Margin="10,0,10,10" 

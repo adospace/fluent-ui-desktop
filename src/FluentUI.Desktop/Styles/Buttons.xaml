@@ -1,8 +1,8 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
                     xmlns:fluentui.desktop="clr-namespace:FluentUI.Desktop">
-    
-    <Style x:Key="FluentUIDesktopFocusVisual">
+
+    <Style x:Key="FluentUIDesktopButtonFocusVisual">
         <Setter Property="Control.Template">
             <Setter.Value>
                 <ControlTemplate>
@@ -13,7 +13,7 @@
     </Style>
 
     <Style x:Key="FluentUIDesktopButtonStyle" TargetType="Button">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopButtonFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource FillColorControlDefault}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ElevationControlBorder}"/>
         <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>
@@ -49,7 +49,7 @@
     </Style>
 
     <Style x:Key="FluentUIDesktopPrimaryButtonStyle" TargetType="fluentui.desktop:PrimaryButton">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopButtonFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource FillColorAccentDefault}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ElevationAccentControlBorder}"/>
         <Setter Property="Foreground" Value="{StaticResource FillColorTextOnAccentPrimary}"/>
@@ -85,7 +85,7 @@
     </Style>
 
     <Style x:Key="FluentUIDesktopToggleButtonStyle" TargetType="ToggleButton">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopButtonFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource FillColorControlDefault}"/>
         <Setter Property="BorderBrush" Value="{StaticResource ElevationControlBorder}"/>
         <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>
@@ -163,7 +163,7 @@
     </Style>
 
     <Style x:Key="FluentUIDesktopToggleSwitchStyle" TargetType="ToggleButton">
-        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopFocusVisual}"/>
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopButtonFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource FillColorControlAltSecondary}"/>
         <Setter Property="BorderBrush" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
         <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>

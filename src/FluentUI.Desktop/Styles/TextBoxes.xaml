@@ -19,7 +19,7 @@
         <!-- NOT WORKING: https://github.com/dotnet/wpf/issues/4571 -->
         <Setter Property="SelectionTextBrush" Value="{StaticResource FillColorTextOnAccentSecondary}"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="9,0"/>
+        <Setter Property="Padding" Value="9,5,9,6"/>
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -32,8 +32,7 @@
                                 BorderThickness="{TemplateBinding BorderThickness}" 
                                 Background="{TemplateBinding Background}" 
                                 SnapsToDevicePixels="true" 
-                                CornerRadius="4" 
-                                MinHeight="32">
+                                CornerRadius="4" >
                             <Grid x:Name="Wm"
                                   VerticalAlignment="Center" >
                                 <ScrollViewer x:Name="PART_ContentHost"
@@ -99,7 +98,7 @@
         <Setter Property="SelectionTextBrush" Value="{StaticResource FillColorTextOnAccentSecondary}"/>
         <Setter Property="PasswordChar" Value="●"/>
         <Setter Property="BorderThickness" Value="1"/>
-        <Setter Property="Padding" Value="9,0"/>
+        <Setter Property="Padding" Value="9,5,9,6"/>
         <Setter Property="AllowDrop" Value="true"/>
         <Setter Property="FocusVisualStyle" Value="{x:Null}"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
@@ -113,8 +112,7 @@
                                 BorderThickness="{TemplateBinding BorderThickness}" 
                                 Background="{TemplateBinding Background}" 
                                 SnapsToDevicePixels="true" 
-                                CornerRadius="4" 
-                                MinHeight="32">
+                                CornerRadius="4">
                             <Grid x:Name="Wm"
                                   VerticalAlignment="Center" >
                                 <ScrollViewer x:Name="PART_ContentHost"
