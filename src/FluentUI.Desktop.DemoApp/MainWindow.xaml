@@ -39,6 +39,7 @@
             </TreeViewItem>
             <TreeViewItem Header="Menu &amp; Toolbars" IsExpanded="True" Tag="Menus">
                 <TreeViewItem Header="Menus" Tag="Menus"/>
+                <TreeViewItem Header="ToolBar" Tag="ToolBar"/>
             </TreeViewItem>
             <TreeViewItem Header="List &amp; Collections" IsExpanded="True" Tag="TreeView">
                 <TreeViewItem Header="TreeView" Tag="TreeView"/>

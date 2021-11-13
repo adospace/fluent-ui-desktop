@@ -14,6 +14,14 @@ namespace FluentUI.Desktop
     {
         static FluentIcon()
         {
+            TextElement.ForegroundProperty.OverrideMetadata(typeof(FluentIcon), new FrameworkPropertyMetadata(new PropertyChangedCallback(OnForegroundPropertyChanged))); 
+        }
+        private static void OnForegroundPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            if (d is FluentIcon fluentIcon)
+            {
+                fluentIcon.InvalidateVisual();
+            }
         }
 
         private static readonly Typeface _typeface = new Typeface(new FontFamily(new Uri("pack://application:,,,/FluentUI.Desktop;component/Fonts/Segoe Fluent Icons.ttf"), "./#Segoe Fluent Icons"), FontStyles.Normal, FontWeights.Normal, FontStretches.Normal);
