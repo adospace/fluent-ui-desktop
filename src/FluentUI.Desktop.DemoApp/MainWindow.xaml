@@ -32,6 +32,7 @@
             <TreeViewItem Header="Core Controls" IsExpanded="True" Tag="Buttons">
                 <TreeViewItem Header="Buttons" Tag="Buttons"/>
                 <TreeViewItem Header="CheckBox" Tag="CheckBox"/>
+                <TreeViewItem Header="RadioButton" Tag="RadioButton"/>
                 <TreeViewItem Header="ComboBox" Tag="ComboBox"/>
             </TreeViewItem>
             <TreeViewItem Header="Text Fields" IsExpanded="True" Tag="TextBoxes">

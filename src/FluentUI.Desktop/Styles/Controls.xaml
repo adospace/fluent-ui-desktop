@@ -35,5 +35,6 @@
     <Style TargetType="ToolBarTray" BasedOn="{StaticResource FluentUIDesktopToolBarTrayStyle}"/>
     <Style TargetType="fluentui.desktop:FluentSplitButton" BasedOn="{StaticResource FluentUIDesktopSplitButtonStyle}"/>
     <Style TargetType="fluentui.desktop:FluentSwitch" BasedOn="{StaticResource FluentUIDesktopToggleSwitchStyle}"/>
+    <Style TargetType="RadioButton" BasedOn="{StaticResource FluentUIDesktopRadioButtonStyle}"/>
 
 </ResourceDictionary>
