@@ -33,5 +33,7 @@
     <Style TargetType="ComboBoxItem" BasedOn="{StaticResource FluentUIDesktopComboBoxItemStyle}"/>
     <Style TargetType="ToolBar" BasedOn="{StaticResource FluentUIDesktopToolBarStyle}"/>
     <Style TargetType="ToolBarTray" BasedOn="{StaticResource FluentUIDesktopToolBarTrayStyle}"/>
+    <Style TargetType="fluentui.desktop:FluentSplitButton" BasedOn="{StaticResource FluentUIDesktopSplitButtonStyle}"/>
+    <Style TargetType="fluentui.desktop:FluentSwitch" BasedOn="{StaticResource FluentUIDesktopToggleSwitchStyle}"/>
 
 </ResourceDictionary>

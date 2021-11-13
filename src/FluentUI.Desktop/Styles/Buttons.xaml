@@ -184,7 +184,7 @@
         </Setter>
     </Style>
 
-    <Style x:Key="FluentUIDesktopToggleSwitchStyle" TargetType="ToggleButton">
+    <Style x:Key="FluentUIDesktopToggleSwitchStyle" TargetType="fluentui.desktop:FluentSwitch">
         <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopButtonFocusVisual}"/>
         <Setter Property="Background" Value="{StaticResource FillColorControlAltSecondary}"/>
         <Setter Property="BorderBrush" Value="{StaticResource StrokeColorControlStrokeDefault}"/>
@@ -282,5 +282,73 @@
         </Setter>
     </Style>
 
-
+    <Style x:Key="FluentUIDesktopSplitButtonStyle" TargetType="fluentui.desktop:FluentSplitButton">
+        <Setter Property="FocusVisualStyle" Value="{StaticResource FluentUIDesktopButtonFocusVisual}"/>
+        <Setter Property="Background" Value="{StaticResource FillColorControlDefault}"/>
+        <Setter Property="BorderBrush" Value="{StaticResource ElevationControlBorder}"/>
+        <Setter Property="Foreground" Value="{StaticResource FillColorTextPrimary}"/>
+        <Setter Property="BorderThickness" Value="1"/>
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="VerticalContentAlignment" Value="Center"/>
+        <Setter Property="Padding" Value="18,5"/>
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type fluentui.desktop:FluentSplitButton}">
+                    <Border x:Name="border" 
+                            Background="{TemplateBinding Background}" 
+                            BorderThickness="{TemplateBinding BorderThickness}" 
+                            BorderBrush="{TemplateBinding BorderBrush}" 
+                            CornerRadius="4"
+                            SnapsToDevicePixels="true">
+                        <DockPanel>
+                            <Border x:Name="contentPresenter"
+                                    Background="Transparent">
+                                <ContentPresenter Focusable="False"
+                                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" 
+                                                  Margin="{TemplateBinding Padding}"
+                                                  RecognizesAccessKey="True" 
+                                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}"
+                                                  VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                            </Border>
+                            <StackPanel x:Name="PART_ArrowDown"
+                                        Orientation="Horizontal"
+                                        DockPanel.Dock="Right"
+                                        Visibility="Collapsed"
+                                        Background="Transparent">
+                                <Rectangle Fill="{StaticResource StrokeColorControlStrokeDefault}" 
+                                           Width="1" 
+                                           Margin="0,6,0,6"/>
+                                <fluentui.desktop:FluentIcon
+                                    x:Name="arrowDownIcon" 
+                                    Icon="ChevronDown" 
+                                    Size="12" 
+                                    TextElement.FontWeight="Normal"
+                                    Margin="8,4" 
+                                    VerticalAlignment="Center"/>
+                            </StackPanel>
+                        </DockPanel>
+                    </Border>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="ShowSplit" Value="True">
+                            <Setter Property="Visibility" TargetName="PART_ArrowDown" Value="Visible"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" SourceName="PART_ArrowDown" Value="true">
+                            <Setter Property="Background" TargetName="PART_ArrowDown" Value="{StaticResource FillColorControlSecondary}"/>
+                        </Trigger>
+                        <Trigger Property="IsMouseOver" SourceName="contentPresenter" Value="true">
+                            <Setter Property="Background" TargetName="contentPresenter" Value="{StaticResource FillColorControlSecondary}"/>
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter Property="Background" TargetName="contentPresenter" Value="{StaticResource FillColorControlTertiary}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="border" Value="{StaticResource FillColorTextSecondary}"/>
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Background" TargetName="border" Value="{StaticResource FillColorControlDisabled}"/>
+                            <Setter Property="TextElement.Foreground" TargetName="border" Value="{StaticResource FillColorTextDisabled}"/>
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
 </ResourceDictionary>

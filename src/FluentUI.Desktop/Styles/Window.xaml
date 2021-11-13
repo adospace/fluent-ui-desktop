@@ -31,28 +31,28 @@
                                 DockPanel.Dock="Right"
                                 Width="46"
                                 BorderThickness="0">
-                                <fluentui.desktop:FluentIcon Icon="ChromeClose" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <fluentui.desktop:FluentIcon Icon="ChromeClose" VerticalAlignment="Center" HorizontalAlignment="Center" Size="12"/>
                             </Border>
                             <Border  
                                 x:Name="restoreButton"
                                 DockPanel.Dock="Right"
                                 Width="46"
                                 BorderThickness="0">
-                                <fluentui.desktop:FluentIcon Icon="ChromeRestore" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <fluentui.desktop:FluentIcon Icon="ChromeRestore" VerticalAlignment="Center" HorizontalAlignment="Center" Size="12"/>
                             </Border>
                             <Border 
                                 x:Name="maximixeButton" 
                                 DockPanel.Dock="Right"
                                 Width="46"
                                 BorderThickness="0">
-                                <fluentui.desktop:FluentIcon Icon="ChromeMaximize" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <fluentui.desktop:FluentIcon Icon="ChromeMaximize" VerticalAlignment="Center" HorizontalAlignment="Center" Size="12"/>
                             </Border>
                             <Border 
                                 x:Name="minimizeButton" 
                                 DockPanel.Dock="Right"
                                 Width="46"
                                 BorderThickness="0">
-                                <fluentui.desktop:FluentIcon Icon="ChromeMinimize" VerticalAlignment="Center" HorizontalAlignment="Center"/>
+                                <fluentui.desktop:FluentIcon Icon="ChromeMinimize" VerticalAlignment="Center" HorizontalAlignment="Center" Size="12"/>
                             </Border>
                             <TextBlock 
                                 Text="{Binding RelativeSource={RelativeSource TemplatedParent}, Path=Title}"   

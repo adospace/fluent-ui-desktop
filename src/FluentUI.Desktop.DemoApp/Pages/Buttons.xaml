@@ -12,45 +12,70 @@
             <Setter Property="Margin" Value="0,5"/>
         </Style>
     </UserControl.Resources>
-    <StackPanel Orientation="Horizontal">
-        <StackPanel
-            HorizontalAlignment="Left"
-            Margin="10">
-            <TextBlock Text="Normal Button" />
-            <Button Content="Click Me!" />
+    <ScrollViewer>
+        <StackPanel Orientation="Vertical">
+            <StackPanel
+                HorizontalAlignment="Left"
+                Margin="10">
+                <TextBlock Text="Normal Button" />
+                <Button Content="Click Me!" />
 
-            <TextBlock Text="Disabled Button" />
-            <Button Content="Click Me!" IsEnabled="False"/>
-        </StackPanel>
-        <StackPanel
-            HorizontalAlignment="Left"
-            Margin="10">
-            <TextBlock Text="Normal Primary Button" />
-            <fluentui.desktop:PrimaryButton Content="Click Me!" />
+                <TextBlock Text="Disabled Button" />
+                <Button Content="Click Me!" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel
+                HorizontalAlignment="Left"
+                Margin="10">
+                <TextBlock Text="Normal Primary Button" />
+                <fluentui.desktop:PrimaryButton Content="Click Me!" />
 
-            <TextBlock Text="Disabled Primary Button" />
-            <fluentui.desktop:PrimaryButton Content="Click Me!" IsEnabled="False"/>
-        </StackPanel>
-        <StackPanel
-            HorizontalAlignment="Left"
-            Margin="10">
-            <TextBlock Text="Normal Toggle Button" />
-            <ToggleButton Content="Toggle Me!" />
+                <TextBlock Text="Disabled Primary Button" />
+                <fluentui.desktop:PrimaryButton Content="Click Me!" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel
+                HorizontalAlignment="Left"
+                Margin="10">
+                <TextBlock Text="Normal Toggle Button" />
+                <ToggleButton Content="Toggle Me!" />
 
-            <TextBlock Text="Disabled Toggle Button" />
-            <ToggleButton Content="Toggle Me!" IsEnabled="False"/>
-        </StackPanel>
-        <StackPanel
-            HorizontalAlignment="Left"
-            Margin="10">
-            <TextBlock Text="Toggle Switch with Text" />
-            <ToggleButton Style="{StaticResource FluentUIDesktopToggleSwitchStyle}" Content="Toggle Me!" />
+                <TextBlock Text="Disabled Toggle Button" />
+                <ToggleButton Content="Toggle Me!" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel
+                HorizontalAlignment="Left"
+                Margin="10">
+                <TextBlock Text="Toggle Switch with Text" />
+                <fluentui.desktop:FluentSwitch Content="Toggle Me!" />
 
-            <TextBlock Text="Toggle Switch" />
-            <ToggleButton Style="{StaticResource FluentUIDesktopToggleSwitchStyle}" />
+                <TextBlock Text="Toggle Switch" />
+                <fluentui.desktop:FluentSwitch />
 
-            <TextBlock Text="Disabled Toggle Switch" />
-            <ToggleButton Style="{StaticResource FluentUIDesktopToggleSwitchStyle}" Content="Toggle Me!" IsEnabled="False"/>
-        </StackPanel>
-    </StackPanel>
+                <TextBlock Text="Disabled Toggle Switch" />
+                <fluentui.desktop:FluentSwitch Content="Toggle Me!" IsEnabled="False"/>
+            </StackPanel>
+            <StackPanel
+                HorizontalAlignment="Left"
+                Margin="10">
+                <TextBlock Text="SplitButton" />
+                <fluentui.desktop:FluentSplitButton
+                    Content="Click me!" >
+                    <fluentui.desktop:FluentSplitButton.Menu>
+                        <ContextMenu>
+                            <MenuItem Header="Item1"/>
+                            <MenuItem Header="Item2"/>
+                            <Separator/>
+                            <MenuItem Header="Item3"/>
+                            <MenuItem Header="Item4"/>
+                        </ContextMenu>
+                    </fluentui.desktop:FluentSplitButton.Menu>
+                </fluentui.desktop:FluentSplitButton>
+
+                <TextBlock Text="Disabled SplitButton" IsEnabled="false"/>
+                <fluentui.desktop:FluentSplitButton 
+                    Content="Disabled" 
+                    IsEnabled="False"/>
+            </StackPanel>
+        </StackPanel>        
+    </ScrollViewer>
+
 </UserControl>
