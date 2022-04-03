@@ -130,7 +130,7 @@
                                       Visibility="Hidden"
                                       Style="{StaticResource FluentUIDesktopScrollBarLineButton}"
                                       Command="ScrollBar.LineUpCommand">
-                            <fluentui.desktop:FluentIcon Icon="CaretUp" />
+                            <fluentui.desktop:FluentIcon Icon="CaretUp8" />
                         </RepeatButton>
                         
                         <Track x:Name="PART_Track" 
@@ -157,7 +157,7 @@
                                       Visibility="Hidden"
                                       Style="{StaticResource FluentUIDesktopScrollBarLineButton}"
                                       Command="ScrollBar.LineDownCommand">
-                            <fluentui.desktop:FluentIcon Icon="CaretDown" />
+                            <fluentui.desktop:FluentIcon Icon="CaretDown8" />
                         </RepeatButton>
                     </Grid>
                     
@@ -196,7 +196,7 @@
                                       Visibility="Hidden"
                                       Style="{StaticResource FluentUIDesktopScrollBarLineButton}"
                                       Command="ScrollBar.LineRightCommand">
-                                    <fluentui.desktop:FluentIcon Icon="CaretLeft" />
+                                    <fluentui.desktop:FluentIcon Icon="CaretLeft8" />
                                 </RepeatButton>
 
                                 <Track x:Name="PART_Track" 
@@ -223,7 +223,7 @@
                                       Visibility="Hidden"
                                       Style="{StaticResource FluentUIDesktopScrollBarLineButton}"
                                       Command="ScrollBar.LineLeftCommand">
-                                    <fluentui.desktop:FluentIcon Icon="CaretRight" />
+                                    <fluentui.desktop:FluentIcon Icon="CaretRight8" />
                                 </RepeatButton>
                             </Grid>
                             <ControlTemplate.Triggers>
